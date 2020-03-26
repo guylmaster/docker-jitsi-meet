@@ -1,0 +1,7 @@
+#!/usr/bin/expect
+
+set timeout 10
+spawn dpkg-reconfigure -freadline jitsi-meet
+expect "SSL certificate for the Jitsi Meet instance "
+send "1\n"
+expect eof
