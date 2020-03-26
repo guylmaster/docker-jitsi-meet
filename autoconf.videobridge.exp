@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+
+set timeout 10 
+set jitsi_hostname [lindex $argv 0]
+
+spawn dpkg-reconfigure -freadline jitsi-videobridge
+expect "Hostname: "
+send "$jitsi_hostname\n"
+expect eof
